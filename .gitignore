@@ -1,0 +1,15 @@
+node_modules
+package-lock.json
+dist
+yarn-error.log
+yarn.lock
+
+.env
+firebase_config.json
+
+profile_pic
+uploads
+
+Helpert DB Structure.xlsx
+
+generate_models.py
