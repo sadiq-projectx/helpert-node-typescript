@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { connectDb } from "./database/connection";
-import { userRouter } from "./routes/main.route";
+import createRoutes from "./routes/main.route";
 import notFoundHandler from "./middleware/notFoundHandler";
 import errorHandler from "./middleware/errorHandler";
 
@@ -10,7 +10,7 @@ export const createApp = () => {
   const app = express();
 
   // Database Connection
-  // connectDb();
+  connectDb();
 
   // Middleware
   app
@@ -19,7 +19,7 @@ export const createApp = () => {
     .use(cors());
 
   // Routes
-  app.use("/api/users", userRouter);
+  createRoutes(app);
 
   // Error Handler
   app.use(notFoundHandler);
